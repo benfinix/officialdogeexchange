@@ -63,10 +63,18 @@ body {
     margin-top: 0;
     cursor: pointer;
     transition: all 0.3s ease;
+    min-height: 2.5rem;
 }
 
 .philosophy:hover {
     text-shadow: 0 0 5px #f2a900;
+}
+
+/* For hiding the philosophy text initially */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
 }
 
 .qr-container {
@@ -126,6 +134,7 @@ doge-qr {
     
     .philosophy {
         font-size: 1.2rem;
+        min-height: 1.5rem;
     }
     
     /* On mobile, center everything vertically */

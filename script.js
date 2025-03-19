@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const exchangeValue = document.getElementById('exchange-value');
     
+    // Track if this is the first loading
+    let isFirstLoading = true;
+    
     // Initial loading effect
     simulateLoading();
     
@@ -51,6 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     requestAnimationFrame(() => {
                         exchangeValue.style.opacity = '1';
                         exchangeValue.style.transition = 'opacity 0.3s ease';
+                        
+                        // Show philosophy text after first loading is complete
+                        if (isFirstLoading) {
+                            setTimeout(() => {
+                                partyTrigger.classList.remove('hidden');
+                                isFirstLoading = false;
+                            }, 500); // Small delay after the number appears
+                        }
                     });
                 }, 300);
             }
