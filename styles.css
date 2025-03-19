@@ -130,20 +130,21 @@ doge-qr {
     
     /* On mobile, center everything vertically */
     body {
-        justify-content: center; /* Changed from flex-start to center */
-        padding-top: 0; /* Removed top padding to allow true centering */
-        min-height: 100vh; /* Ensure full height is used */
-    }
-    
-    /* Ensure exchange container is centered */
-    .exchange-container {
-        flex: 0 0 auto; /* Don't stretch */
-        margin: auto 0; /* Center vertically */
-        display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 1rem; /* Smaller padding */
+        padding-top: 0;
+        padding-bottom: 0; /* Remove any bottom padding */
+        min-height: 100vh;
+        margin: 0; /* Ensure no margins are pushing content */
+    }
+    
+    /* Ensure exchange container is properly centered */
+    .exchange-container {
+        flex: 0 0 auto;
+        margin: 0 auto; /* Center horizontally and remove vertical margins */
+        padding: 1rem;
+        position: relative; /* Ensure position context */
+        top: -20px; /* Slight adjustment to visually center better */
     }
     
     .qr-container {
@@ -169,5 +170,56 @@ doge-qr {
     .qr-caption {
         font-size: 0.7rem;
         margin-top: 5px;
+    }
+}
+
+/* Loading spinner styles */
+.loading-spinner {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    vertical-align: middle;
+    border: 0.5rem solid #f0e6d2;
+    border-right-color: #f2a900;
+    border-radius: 50%;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#exchange-value {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4rem;
+    vertical-align: middle; 
+    line-height: 1;
+    height: 4rem; /* Match the spinner height */
+}
+
+/* Style for the actual value (when "1" is shown) */
+#exchange-value.loaded-value {
+    vertical-align: baseline; /* Align with the rest of the text */
+    font-size: inherit; /* Match parent font size */
+    height: auto; /* Reset height */
+    display: inline; /* Change from flex to inline */
+}
+
+/* Media query adjustments for loading spinner */
+@media (max-width: 768px) {
+    /* Mobile spinner size adjustments */
+    .loading-spinner {
+        width: 2rem;
+        height: 2rem;
+        border-width: 0.3rem;
+    }
+    
+    #exchange-value {
+        min-width: 2rem;
+        height: 2rem; /* Match smaller spinner height on mobile */
     }
 } 
