@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official DOGE Exchange</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://fetch.dogecoin.org/initial.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://fetch.dogecoin.org/doge-qr.js"></script>
+</head>
+<body>
+    <div class="background-container">
+        <img src="images/doge-ghost.png" alt="Doge with sunglasses" class="doge-ghost">
+    </div>
+    
+    <main class="exchange-container">
+        <h1 class="exchange-rate">1 DOGE = 1 DOGE</h1>
+        <p class="philosophy" id="trigger-party">True Value Never Changes</p>
+    </main>
+    
+    <div class="qr-container">
+        <doge-qr address="DLGzkr1aRrGgmiXwLTFCundYNWbYdBJ3zm" theme="such-doge" size="sm" class="qr-code"></doge-qr>
+        <p class="qr-caption">Such coffee? ☕</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
