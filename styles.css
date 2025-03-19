@@ -1,11 +1,17 @@
 @font-face {
     font-family: 'Comic Sans MS';
-    src: url('https://fonts.cdnfonts.com/css/comic-sans-ms');
+    src: url('https://db.onlinewebfonts.com/t/7cc6719bd5f0310be3150ba33418e72e.eot');
+    src: url('https://db.onlinewebfonts.com/t/7cc6719bd5f0310be3150ba33418e72e.eot?#iefix') format('embedded-opentype'),
+         url('https://db.onlinewebfonts.com/t/7cc6719bd5f0310be3150ba33418e72e.woff2') format('woff2'),
+         url('https://db.onlinewebfonts.com/t/7cc6719bd5f0310be3150ba33418e72e.woff') format('woff'),
+         url('https://db.onlinewebfonts.com/t/7cc6719bd5f0310be3150ba33418e72e.ttf') format('truetype'),
+         url('https://db.onlinewebfonts.com/t/7cc6719bd5f0310be3150ba33418e72e.svg#Comic Sans MS') format('svg');
+    font-display: swap;
 }
 
 * {
     box-sizing: border-box;
-    font-family: 'Comic Sans MS', sans-serif;
+    font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', 'Comic Neue', sans-serif;
     color: #5c4b37;
 }
 
@@ -122,10 +128,22 @@ doge-qr {
         font-size: 1.2rem;
     }
     
-    /* On mobile, center everything */
+    /* On mobile, center everything vertically */
     body {
-        justify-content: flex-start;
-        padding-top: 2rem;
+        justify-content: center; /* Changed from flex-start to center */
+        padding-top: 0; /* Removed top padding to allow true centering */
+        min-height: 100vh; /* Ensure full height is used */
+    }
+    
+    /* Ensure exchange container is centered */
+    .exchange-container {
+        flex: 0 0 auto; /* Don't stretch */
+        margin: auto 0; /* Center vertically */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem; /* Smaller padding */
     }
     
     .qr-container {
@@ -137,7 +155,7 @@ doge-qr {
         margin-top: 0;
         width: auto;
     }
-    
+        
     /* Override the QR code size on mobile */
     .qr-code {
         --doge-qr-size: 80px;
